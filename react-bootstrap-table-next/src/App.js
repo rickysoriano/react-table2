@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState, useEffect} from "react";
+import axios from "axios";
+import BootstrapTable from "react-bootstrap-table-next";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  const [datos,setDatos] = useState([])
+  useEffect(() =>{
+    getData();
+  },[])
+  const getData = () => {
+    axios("https://jsonplaceholder.typicode.com/comments").then((res)=>{
+      setDatos(res.data);
+    })
+  }
+  const columnas =[
+    {
+      dataField:"email",
+      text:"Email"
+    },
+    {
+      dataField:"name",
+      text:"Nombre"
+    },
+    {
+      dataField:"body",
+      text:"Relleno"
+    },
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <BootstrapTable keyField="id" data={datos} columns={columnas}/>
     </div>
   );
 }

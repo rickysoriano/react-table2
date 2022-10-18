@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
-import cellEditFactory, {Type} from "react-bootstrap-table2-editor"; 
+import cellEditFactory, { Type } from "react-bootstrap-table2-editor";
 
 function App() {
   const [datos, setDatos] = useState([]);
@@ -19,12 +19,12 @@ function App() {
     {
       dataField: "email",
       text: "Email",
-      sort:"true"
+      sort: "true",
     },
     {
       dataField: "name",
       text: "Nombre",
-      sort:"true"
+      sort: "true",
     },
     {
       dataField: "body",
@@ -33,14 +33,22 @@ function App() {
     {
       dataField: "postId",
       text: "postId",
-    }
+    },
   ];
   return (
     <div className="App">
-      <BootstrapTable keyField="id" data={datos} columns={columnas} striped hover condensed pagination={paginationFactory()}/>
+      <BootstrapTable
+        keyField="id"
+        data={datos}
+        columns={columnas}
+        striped
+        hover
+        condensed
+        pagination={paginationFactory()}
+        cellEdit={cellEditFactory({mode:"click"})}
+      />
     </div>
   );
 }
-
 
 export default App;

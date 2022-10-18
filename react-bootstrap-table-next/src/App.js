@@ -17,10 +17,12 @@ function App() {
     {
       dataField: "email",
       text: "Email",
+      sort:"true"
     },
     {
       dataField: "name",
       text: "Nombre",
+      sort:"true"
     },
     {
       dataField: "body",

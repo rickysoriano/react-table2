@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import BootstrapTable from "react-bootstrap-table-next";
+import paginationFactory from "react-bootstrap-table2-paginator";
 
 function App() {
   const [datos, setDatos] = useState([]);
@@ -12,7 +13,7 @@ function App() {
       setDatos(res.data);
     });
   };
- 
+
   const columnas = [
     {
       dataField: "email",
@@ -39,5 +40,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

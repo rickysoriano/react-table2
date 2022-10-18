@@ -3,7 +3,7 @@ import axios from "axios";
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import cellEditFactory, { Type } from "react-bootstrap-table2-editor";
-import filterFactory from "react-bootstrap-table2-filter";
+import filterFactory,{textFilter} from "react-bootstrap-table2-filter";
 function App() {
   const [datos, setDatos] = useState([]);
   useEffect(() => {
@@ -25,6 +25,7 @@ function App() {
       dataField: "name",
       text: "Nombre",
       sort: "true",
+      filter: textFilter()
     },
     {
       dataField: "body",
@@ -46,6 +47,7 @@ function App() {
         condensed
         pagination={paginationFactory()}
         cellEdit={cellEditFactory({mode:"click"})}
+        filter={filterFactory()}
       />
     </div>
   );

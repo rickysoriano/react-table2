@@ -1,7 +1,6 @@
 import {useState, useEffect} from "react";
 import axios from "axios";
 import BootstrapTable from "react-bootstrap-table-next";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [datos,setDatos] = useState([])

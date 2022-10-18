@@ -36,7 +36,7 @@ function App() {
   ];
   return (
     <div className="App">
-      <BootstrapTable keyField="id" data={datos} columns={columnas} striped hover condensed/>
+      <BootstrapTable keyField="id" data={datos} columns={columnas} striped hover condensed pagination={paginationFactory()}/>
     </div>
   );
 }

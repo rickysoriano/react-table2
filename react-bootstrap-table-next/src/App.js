@@ -1,54 +1,23 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import BootstrapTable from "react-bootstrap-table-next";
-import paginationFactory from "react-bootstrap-table2-paginator";
-import cellEditFactory, { Type } from "react-bootstrap-table2-editor";
-import filterFactory,{textFilter} from "react-bootstrap-table2-filter";
-function App() {
-  const [datos, setDatos] = useState([]);
-  useEffect(() => {
-    getData();
-  }, []);
-  const getData = () => {
-    axios("https://jsonplaceholder.typicode.com/comments").then((res) => {
-      setDatos(res.data);
-    });
-  };
+import logo from './logo.svg';
+import './App.css';
 
-  const columnas = [
-    {
-      dataField: "email",
-      text: "Email",
-      sort: "true",
-    },
-    {
-      dataField: "name",
-      text: "Nombre",
-      sort: "true",
-      filter: textFilter()
-    },
-    {
-      dataField: "body",
-      text: "Relleno",
-    },
-    {
-      dataField: "postId",
-      text: "postId",
-    },
-  ];
+function App() {
   return (
     <div className="App">
-      <BootstrapTable
-        keyField="id"
-        data={datos}
-        columns={columnas}
-        striped
-        hover
-        condensed
-        pagination={paginationFactory()}
-        cellEdit={cellEditFactory({mode:"click"})}
-        filter={filterFactory()}
-      />
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }

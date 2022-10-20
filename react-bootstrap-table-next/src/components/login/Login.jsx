@@ -41,7 +41,7 @@ function Login() {
             </Form.Group>
             <Button
               className="btn btn-secondary d-grid col-6 mx-auto"
-              onClick={() => iniciarSesion()}
+             
             >
               Entrar
             </Button>

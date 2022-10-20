@@ -10,4 +10,11 @@ function Login() {
       username: "",
       password: "",
     });
-  
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm({
+          ...form,
+          [name]: value,
+        });
+      };
+     

@@ -18,3 +18,15 @@ function Login() {
         });
       };
      
+  return (
+    <div className="position-absolute top-50 start-50 translate-middle">
+      <Card bg={"light"} border="secondary" style={{ width: "19rem" }}>
+        <Card.Body>
+          <Form>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>USUARIO:</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Ingresar nombre de usuario"
+                name="username"
+                onChange={handleChange}

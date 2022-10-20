@@ -1,23 +1,21 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 
-
 function Login() {
- 
-    const [form, setForm] = useState({
-      username: "",
-      password: "",
+  const [form, setForm] = useState({
+    username: "",
+    password: "",
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({
+      ...form,
+      [name]: value,
     });
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setForm({
-          ...form,
-          [name]: value,
-        });
-      };
-     
+  };
+
   return (
     <div className="position-absolute top-50 start-50 translate-middle">
       <Card bg={"light"} border="secondary" style={{ width: "19rem" }}>
@@ -31,21 +29,21 @@ function Login() {
                 name="username"
                 onChange={handleChange}
               />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>CONTRASEÑA:</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Ingresar contraseña"
-                  name="password"
-                  onChange={handleChange}
-                />
-                 </Form.Group>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>CONTRASEÑA:</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Ingresar contraseña"
+                name="password"
+                onChange={handleChange}
+              />
+            </Form.Group>
             <Button
               className="btn btn-secondary d-grid col-6 mx-auto"
               onClick={() => iniciarSesion()}
-            ></Button>   
-            Entrar
+            >
+              Entrar
             </Button>
           </Form>
         </Card.Body>

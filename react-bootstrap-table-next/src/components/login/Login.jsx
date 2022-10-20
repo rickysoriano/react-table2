@@ -44,4 +44,13 @@ function Login() {
             <Button
               className="btn btn-secondary d-grid col-6 mx-auto"
               onClick={() => iniciarSesion()}
-            ></Button>
+            ></Button>   
+            Entrar
+            </Button>
+          </Form>
+        </Card.Body>
+      </Card>
+    </div>
+  );
+}
+export default Login;

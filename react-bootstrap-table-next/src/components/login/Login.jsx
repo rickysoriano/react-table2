@@ -30,3 +30,13 @@ function Login() {
                 placeholder="Ingresar nombre de usuario"
                 name="username"
                 onChange={handleChange}
+              />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>CONTRASEÑA:</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Ingresar contraseña"
+                  name="password"
+                  onChange={handleChange}
+                />

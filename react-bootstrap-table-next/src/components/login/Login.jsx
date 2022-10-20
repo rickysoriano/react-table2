@@ -39,10 +39,7 @@ function Login() {
                 onChange={handleChange}
               />
             </Form.Group>
-            <Button
-              className="btn btn-secondary d-grid col-6 mx-auto"
-             
-            >
+            <Button className="btn btn-secondary d-grid col-6 mx-auto">
               Entrar
             </Button>
           </Form>

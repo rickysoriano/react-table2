@@ -40,3 +40,8 @@ function Login() {
                   name="password"
                   onChange={handleChange}
                 />
+                 </Form.Group>
+            <Button
+              className="btn btn-secondary d-grid col-6 mx-auto"
+              onClick={() => iniciarSesion()}
+            ></Button>

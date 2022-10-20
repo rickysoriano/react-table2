@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
-import cellEditFactory, { Type } from "react-bootstrap-table2-editor";
+import cellEditFactory from "react-bootstrap-table2-editor";
 import filterFactory,{textFilter} from "react-bootstrap-table2-filter";
 function TaskListV() {
   const [datos, setDatos] = useState([]);

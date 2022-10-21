@@ -47,3 +47,13 @@ function App() {
           {filterTask(true).map((item) => (
             <div className="col-12 col-md-7 mt-3" key={item}>
               <SeccionTask task={item} setTasks={setTasks} tasks={tasks}/>
+              
+            </div>
+          ))}
+        </div>
+        <div className="row justify-content-center mt-4">
+          <div className="col-5">
+            <button
+              className="btn btn-info form-control"
+              onClick={() => setVisible(true)}
+            ></button>

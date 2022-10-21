@@ -12,3 +12,18 @@ export const NewTask = ({ setOpen, setTasks, tasks, title }) => {
         setTasks(filterTask);
         setOpen(false);
         return;
+        
+    }
+    if (Task) {
+      const data = {
+        id: new Date().getTime().toString(),
+        task: Task,
+        complete: false,
+      };
+      console.log(data);
+      setOpen(false);
+      setTasks([...[data], ...tasks]);
+    } else {
+      alert("Este campo es requerido!");
+    }
+  };

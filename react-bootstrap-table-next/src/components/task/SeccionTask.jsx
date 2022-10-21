@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { ModalForm } from "./Modal";
-import { NewTask } from "./NewTask";
+import { ModalForm } from "../modal/ModalForm";
+import { NewTask } from "../task/NewTask";
 export const SeccionTask = ({ task, setTasks, tasks }) => {
   const [visible, setVisible] = useState(false);
   const checkTask = (check) => {

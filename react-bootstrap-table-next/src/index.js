@@ -6,11 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TaskListV from './components/task/TaskListV';
 import Login from './components/login/Login';
+import TaskAddV from "./components/task/TaskAddV"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Login />
+    <TaskAddV />
   </React.StrictMode>
 );
 

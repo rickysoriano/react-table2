@@ -36,3 +36,14 @@ function App() {
           ))}
           {!filterTask(false).length && (
             <div className="col-12 col-md-7">
+            
+            <Alert variant={"danger"}>No hay tareas disponibles!</Alert>
+            </div>
+          )}
+        </div>
+
+        <h3 className="p-2">Completados</h3>
+        <div className="row justify-content-center mt-4">
+          {filterTask(true).map((item) => (
+            <div className="col-12 col-md-7 mt-3" key={item}>
+              <SeccionTask task={item} setTasks={setTasks} tasks={tasks}/>

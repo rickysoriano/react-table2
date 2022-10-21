@@ -14,4 +14,25 @@ export const SeccionTask = ({ task, setTasks, tasks }) => {
       const filterTask = tasks.filter((item) => item.id !== task.id);
       setTasks(filterTask);
     };
-  
+    return (
+        <>
+          <div className="d-flex mb-1 seccionTask align-items-center p-1">
+            <input
+              type="checkbox"
+              className="p-2"
+              onChange={(event) => checkTask(event.target.checked)}
+              defaultChecked={task.complete}
+            />
+            <span className="p-1" onClick={() => setVisible(true)}>
+              {task.task}
+            </span>
+            <span className="p-1 ms-auto text-danger" onClick={deleteTask}>
+              Eliminar
+            </span>
+          </div>
+          <ModalForm open={visible} setOpen={setVisible}>
+            <NewTask setOpen={setVisible} setTasks={setTasks} tasks={tasks} title={task.task}/>
+          </ModalForm>
+        </>
+      );
+    };

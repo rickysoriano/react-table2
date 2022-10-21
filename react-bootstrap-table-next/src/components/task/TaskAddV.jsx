@@ -25,3 +25,14 @@ function App() {
         <div className="row justify-content-center">
           <div className="col-12 col-md-5">
             <input placeholder="Buscar tareas" onChange={event => setSearch(event.target.value)} className="form-control" />
+            
+          </div>
+        </div>
+        <div className="row justify-content-center mt-4">
+          {filterTask(false).map((item) => (
+            <div className="col-12 col-md-7 mt-2" key={item.id}>
+              <SeccionTask task={item} setTasks={setTasks} tasks={tasks}/>
+            </div>
+          ))}
+          {!filterTask(false).length && (
+            <div className="col-12 col-md-7">
